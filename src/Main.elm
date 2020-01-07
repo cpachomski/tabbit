@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Browser
+import Header exposing (headerView)
 import Html exposing (Html, div, h1, input, text)
 import Html.Attributes exposing (class, placeholder, type_, value)
 import Html.Events exposing (onInput)
@@ -47,7 +48,8 @@ update msg model =
 view : Model -> Html Msg
 view model =
     div []
-        [ h1 [] [ text model.sheetName ]
+        [ headerView
+        , h1 [] [ text model.sheetName ]
         , input
             [ type_ "text"
             , value model.sheetName
